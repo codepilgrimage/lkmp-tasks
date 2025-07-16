@@ -8,10 +8,14 @@ Linux kernel Fall Unpaid 2025 mentorship program
 - [Kernel GIT Repository](https://git.kernel.org/)
 - [The Linux Kernel Archives](https://www.kernel.org/category/releases.html)
 - [A guide to the Kernel Development Process](https://www.kernel.org/doc/html/latest/process/development-process.html)
+- [Code Of Conduct](https://www.kernel.org/doc/html/latest/process/code-of-conduct.html)
+- [Code Of Conduct Interpretation](https://www.kernel.org/doc/html/latest/process/code-of-conduct-interpretation.html)
 
 ## Important Kernel Documents
 - [Document - Kernel Tags](https://www.kernel.org/doc/html/latest/process/submitting-patches.html#using-reported-by-tested-by-reviewed-by-suggested-by-and-fixes)
 - [Document - Submitting Patches](https://www.kernel.org/doc/html/latest/process/submitting-patches.html#sign-your-work-the-developer-s-certificate-of-origin)
+- [Patch Version History](https://patchwork.kernel.org/patch/11163415/)
+- [Minimal requirements to compile the Kernel](https://www.kernel.org/doc/html/latest/process/changes.html)
 
 ## Important Books to consider
 - Linux Kernel Programming (2nd Edition) by Kaiwan N. Billimoria
