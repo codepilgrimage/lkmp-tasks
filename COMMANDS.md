@@ -16,6 +16,18 @@
 ### Shortcuts
 - ctrl+h - to view the hidden files in the folder
 
+### Copy the Kernel Config Files
+- cp /boot/config-* kernel/
+
+### Compile the Kernel
+- `make oldconfig` - to generate the kernel configuration based on current configuration
+- ```shell
+  lsmod > /tmp/my-lsmod
+  make LSMOD=/tmp/my-lsmod localmodconfig/
+  ```
+  - Trim down the kernel and tailor it to your system is by using make localmodconfig. This option creates a configuration file based on the list of modules currently loaded on your system.
+- `make -j3 all` - time to compile the kernel. Using the -j option helps the compiles go faster. The -j option specifies the number of jobs (`make commands`) to run simultaneously
+
 ### Important Files 
 - Makefile
 - MAINTAINERS
