@@ -26,7 +26,16 @@ Linux kernel Fall Unpaid 2025 mentorship program
 
 ## Kernel Links
 - [Linux-Mainline](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/)
-- 
+- ```shell
+  git clone git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git linux_stable
+  cd linux_stable
+  git branch -a | grep linux-5
+    remotes/origin/linux-5.12.y
+    remotes/origin/linux-5.11.y
+    remotes/origin/linux-5.10.y
+
+​git checkout linux-5.12.y
+```
 
 ## Important Books to consider
 - Linux Kernel Programming (2nd Edition) by Kaiwan N. Billimoria
