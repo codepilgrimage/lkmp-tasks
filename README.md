@@ -10,12 +10,23 @@ Linux kernel Fall Unpaid 2025 mentorship program
 - [A guide to the Kernel Development Process](https://www.kernel.org/doc/html/latest/process/development-process.html)
 - [Code Of Conduct](https://www.kernel.org/doc/html/latest/process/code-of-conduct.html)
 - [Code Of Conduct Interpretation](https://www.kernel.org/doc/html/latest/process/code-of-conduct-interpretation.html)
-
+- [Git Email Configuration](https://git-send-email.io/)
+- [Email clients info for Linux](https://www.kernel.org/doc/html/latest/process/email-clients.html)
+- [Git-scm - Send-email](https://git-scm.com/docs/git-send-email)
+  
 ## Important Kernel Documents
 - [Document - Kernel Tags](https://www.kernel.org/doc/html/latest/process/submitting-patches.html#using-reported-by-tested-by-reviewed-by-suggested-by-and-fixes)
 - [Document - Submitting Patches](https://www.kernel.org/doc/html/latest/process/submitting-patches.html#sign-your-work-the-developer-s-certificate-of-origin)
 - [Patch Version History](https://patchwork.kernel.org/patch/11163415/)
 - [Minimal requirements to compile the Kernel](https://www.kernel.org/doc/html/latest/process/changes.html)
+
+## Misc
+- [cregit Tool - Explore the source history](https://github.com/cregit/cregit)
+- [The Linux Kernel Archives](https://www.kernel.org/)
+
+## Kernel Links
+- [Linux-Mainline](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/)
+- 
 
 ## Important Books to consider
 - Linux Kernel Programming (2nd Edition) by Kaiwan N. Billimoria
@@ -55,3 +66,10 @@ Linux kernel Fall Unpaid 2025 mentorship program
 - [PATCH] - used to indicate that the email consists of a patch
 - [RFC PATCH] or [PATCH RFC] - indicates the author is requesting comments on the patch. RFC stands for "Request For Comments"
 - [PATCH v4] - used to indicate that the patch is the 4th version of this specific change that is being submitted. It is not unusual for a patch to go through a few revisions before it gets accepted
+
+### Email Client Configuration
+- Bottom post - Never top post in your response. Top posting is writing a message above the original text while responding to an email. Add your response at the bottom of the original text. Bottom posting makes reading and following review comments on a patch easier.
+- Inline post - When reviewing or responding to a patch, deleting or stripping parts of the message you are not replying to is a good practice, and makes it easier to follow the responses in the thread.
+- No HTML format - Disable compose messages in HTML format. Patches sent using HTML format will be automatically rejected by the development mailing lists
+- No signatures - Do not include private information in your signature. This is important for privacy reasons, as you will be posting to mailing lists.
+- No attachments - Do not send patches as attachments. In general, avoid attachments. Some exceptions are kernel logs or configuration files when reporting bugs.
