@@ -21,6 +21,7 @@
 
 ### Compile the Kernel
 - `make oldconfig` - to generate the kernel configuration based on current configuration
+  - Need to run this command inside of the kernel we're going to build
 - ```shell
   lsmod > /tmp/my-lsmod
   make LSMOD=/tmp/my-lsmod localmodconfig/
