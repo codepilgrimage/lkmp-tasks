@@ -82,3 +82,7 @@ Linux kernel Fall Unpaid 2025 mentorship program
 - No HTML format - Disable compose messages in HTML format. Patches sent using HTML format will be automatically rejected by the development mailing lists
 - No signatures - Do not include private information in your signature. This is important for privacy reasons, as you will be posting to mailing lists.
 - No attachments - Do not send patches as attachments. In general, avoid attachments. Some exceptions are kernel logs or configuration files when reporting bugs.
+
+
+### Install Edge & VS Code
+- Refer to this chat -> https://chatgpt.com/share/6880bf94-13f8-800c-907f-d6e237098e43
