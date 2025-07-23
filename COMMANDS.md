@@ -1,7 +1,10 @@
 ### Shell Commands
 - `uname -r` - to display the current kernel version
-- touch <filename> - create a file
-- ls -h
+- `touch <filename>` - create a file
+- `lsmod` - to list all modules/drivers are loaded
+- `grep` - to search through the files
+- `ls -h`
+- `ls /boot/` - lists all files in `/boot/` folder
 
 ### GIT Setup
 - git --version
