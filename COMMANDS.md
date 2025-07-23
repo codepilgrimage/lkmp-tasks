@@ -19,6 +19,11 @@
 ### Copy the Kernel Config Files
 - cp /boot/config-* kernel/
 
+### Pre-requisite
+- ```
+  sudo apt-get install build-essential vim git cscope libncurses-dev libssl-dev bison flex gawk mokutil libdwarf-dev libelf-dev libdw-dev
+  ```
+
 ### Compile the Kernel
 - `make oldconfig` - to generate the kernel configuration based on current configuration
   - Need to run this command inside of the kernel we're going to build
