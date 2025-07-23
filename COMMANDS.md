@@ -20,6 +20,7 @@
 - cp /boot/config-* kernel/
 
 ### Pre-requisite
+- Also refer to this chapter [Online Chapter](https://static.packt-cdn.com/downloads/9781803232225_Online_Chapter.pdf)
 - ```
   sudo apt-get install build-essential vim git cscope libncurses-dev libssl-dev bison flex gawk mokutil libdwarf-dev libelf-dev libdw-dev
   ```
