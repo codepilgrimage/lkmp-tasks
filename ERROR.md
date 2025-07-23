@@ -61,7 +61,7 @@
 ---
 
 ---
-## 2. 
+## 2. gawk module
 ### Error - `gawk` module not found
 ```shell
     /bin/sh: 1: gawk: not found
@@ -80,4 +80,6 @@
     ```
 ---
 
+## 3. Sharedrive
+- Refer to this chat -> [configure VirtualBox Sharedrive](https://chatgpt.com/share/6880c011-1644-800c-a5c7-81adeb3309fe)
 
