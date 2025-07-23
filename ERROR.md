@@ -60,3 +60,24 @@
 
 ---
 
+---
+## 2. 
+### Error - `gawk` module not found
+```shell
+    /bin/sh: 1: gawk: not found
+    make[2]: *** [scripts/Makefile.vmlinux:111: modules.builtin.ranges] Error 127
+    make[2]: *** Deleting file 'modules.builtin.ranges'
+    make[2]: *** Waiting for unfinished jobs....
+    make[1]: *** [/home/rakuram-lkmp/kernel/linux-master/Makefile:1236: vmlinux] Error 2
+    make: *** [Makefile:248: __sub-make] Error 2
+```
+
+### Solution
+- Install the gawk module
+    ```shell
+    sudo apt update
+    sudo apt install gawk
+    ```
+---
+
+
