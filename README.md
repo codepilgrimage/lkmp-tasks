@@ -13,16 +13,29 @@ Linux kernel Fall Unpaid 2025 mentorship program
 - [Git Email Configuration](https://git-send-email.io/)
 - [Email clients info for Linux](https://www.kernel.org/doc/html/latest/process/email-clients.html)
 - [Git-scm - Send-email](https://git-scm.com/docs/git-send-email)
-  
+
 ## Important Kernel Documents
 - [Document - Kernel Tags](https://www.kernel.org/doc/html/latest/process/submitting-patches.html#using-reported-by-tested-by-reviewed-by-suggested-by-and-fixes)
 - [Document - Submitting Patches](https://www.kernel.org/doc/html/latest/process/submitting-patches.html#sign-your-work-the-developer-s-certificate-of-origin)
 - [Patch Version History](https://patchwork.kernel.org/patch/11163415/)
 - [Minimal requirements to compile the Kernel](https://www.kernel.org/doc/html/latest/process/changes.html)
 
+## Brief Helpful Guide For Starters
+- [Kernel Newbies - First Kernel Patch](https://kernelnewbies.org/FirstKernelPatch)
+- [ARCHLINUX - Kernel/Traditional compilation](https://wiki.archlinux.org/title/Kernel/Traditional_compilation)
+- [ARCHLINUX - mkinitcpio](https://wiki.archlinux.org/title/Mkinitcpio)
+
+## Other Online Articles
+- [KConfig-Language](https://www.kernel.org/doc/html/v6.1/kbuild/kconfig-language.html#kconfig-language)
+- [A Dive into Kbuild By Cao Jin, Fujitsu](https://events19.linuxfoundation.org/wp-content/uploads/2017/11/A-Dive-into-Kbuild-Cao-Jin-Fujitsu.pdf)
+- [Exploring the Linux kernel: The secrets of Kconfig/kbuild](https://opensource.com/article/18/10/kbuild-and-kconfig)
+- [Kbuild: the Linux Kernel Build System](https://www.linuxjournal.com/content/kbuild-linux-kernel-build-system)
+
+
 ## Misc
 - [cregit Tool - Explore the source history](https://github.com/cregit/cregit)
 - [The Linux Kernel Archives](https://www.kernel.org/)
+- [Kernel Newbies](https://kernelnewbies.org/)
 
 ## Kernel Links
 - [Linux-Mainline](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/)
