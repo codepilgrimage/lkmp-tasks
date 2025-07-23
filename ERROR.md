@@ -80,6 +80,92 @@
     ```
 ---
 
+---
 ## 3. Sharedrive
 - Refer to this chat -> [configure VirtualBox Sharedrive](https://chatgpt.com/share/6880c011-1644-800c-a5c7-81adeb3309fe)
+---
 
+---
+## 4. Certificate Error
+### Error Description
+```shell
+make[3]: *** No rule to make target 'debian/canonical-certs.pem', needed by 'certs/x509_certificate_list'.  Stop.
+make[3]: *** Waiting for unfinished jobs....
+  CC      certs/system_keyring.o
+make[2]: *** [scripts/Makefile.build:555: certs] Error 2
+make[2]: *** Waiting for unfinished jobs....
+```
+### Solution
+- Run the below command in terminal
+```shell
+# Apply fix
+scripts/config --disable SYSTEM_REVOCATION_LIST
+scripts/config --disable SYSTEM_REVOCATION_KEYS
+
+# Regenerate .config accordingly
+make olddefconfig
+
+# Rebuild
+make -j$(nproc)
+```
+---
+
+---
+## 5. Different folder for Build & Source - Linux Kernel Build Error Fix
+
+### Error Description
+
+```
+make[1]: *** .../Makefile:2003: .] Error 2
+make: *** [Makefile:248: __sub-make] Error 2
+```
+
+This error is **100% caused by using the same directory for both the source and the build output**, which the Linux kernel explicitly forbids.
+
+### Solution Steps
+
+#### Step 1: Go to your kernel source directory
+
+```bash
+cd ~/rakuram-lkmp/linux-kernel/linux-mainline-linus
+```
+
+#### Step 2: Create a separate output build directory
+
+```bash
+mkdir -p build
+```
+
+#### Step 3: Run kernel configuration
+
+```bash
+make O=build defconfig
+```
+
+You can also use `menuconfig` if you want:
+
+```bash
+make O=build menuconfig
+```
+
+#### Step 4: Start the actual build
+
+```bash
+make O=build -j$(nproc)
+```
+
+This tells the kernel to use the `build/` folder for all temporary files and outputs.
+
+### Why This Works
+
+The Linux kernel build system requires a clean separation between source code and build artifacts. Using the `O=build` parameter ensures that:
+
+- Source files remain untouched
+- All compiled objects go to the separate build directory
+- The build system can properly track dependencies
+- You avoid conflicts between source and generated files
+---
+
+---
+
+---
