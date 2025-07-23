@@ -166,6 +166,28 @@ The Linux kernel build system requires a clean separation between source code an
 - You avoid conflicts between source and generated files
 ---
 
+
 ---
+## 5. Out of Tree - folder Structure of Build
+
+### Error
+
+- In the 1st command, I need to specify the folder build to grep the data. If I want to modifiy that means how to do that?
+    ```shell
+    rakuram-lkmp@lkmp:~/linux-kernel/linux-mainline-linus$ grep CONFIG_SYSTEM_TRUSTED_KEYS build/.config
+    CONFIG_SYSTEM_TRUSTED_KEYS="debian/canonical-certs.pem"
+    rakuram-lkmp@lkmp:~/linux-kernel/linux-mainline-linus$ scripts/config --disable SYSTEM_REVOCATION_KEYS
+    grep: .config: No such file or directory
+    ```
+
+### Solution
+- ✅ To Modify the .config inside build/, you must do:
+    ```bash
+    scripts/config --file build/.config --disable SYSTEM_TRUSTED_KEYS
+    scripts/config --file build/.config --disable SYSTEM_REVOCATION_KEYS
+
+    # Then regenerate dependencies using below command
+    make O=build olddefconfig
+    ```
 
 ---
