@@ -4,6 +4,7 @@ Linux kernel Fall Unpaid 2025 mentorship program
 ## Important Links to refer
 - [LFD103 Course](https://trainingportal.linuxfoundation.org/learn/course/a-beginners-guide-to-linux-kernel-development-lfd103)
 - [Linux Kernel Self-Protection Project](https://kspp.github.io/)
+- [Analysis on Kernel Self-Protection: Understanding Security and Performance Implication](https://samsung.github.io/kspp-study/stack-ovfl.html)
 - [Mailing List - Archives](https://lore.kernel.org/)
 - [Linux Kernel - Mailing List - All Subsystems](https://subspace.kernel.org/vger.kernel.org.html)
 - [Kernel GIT Repository](https://git.kernel.org/)
