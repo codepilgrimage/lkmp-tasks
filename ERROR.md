@@ -189,5 +189,33 @@ The Linux kernel build system requires a clean separation between source code an
     # Then regenerate dependencies using below command
     make O=build olddefconfig
     ```
+---
 
 ---
+## 6. Out of Tree - folder Structure of Build - Disable DSCP 
+
+### Error
+
+- In the 1st command, I need to specify the folder build to grep the data. If I want to modifiy that means how to do that?
+    ```shell
+    make[5]: *** No rule to make target 'net/netfilter/xt_DSCP.o', needed by 'net/netfilter/'.  Stop.
+    make[5]: *** Waiting for unfinished jobs....
+    make[4]: *** [../scripts/Makefile.build:555: net/netfilter] Error 2
+    make[3]: *** [../scripts/Makefile.build:555: net] Error 2
+    make[3]: *** Waiting for unfinished jobs....
+    ```
+
+### Solution
+- Disable the CONFIG_NETFILTER_XT_TARGET_DSCP from `.config`
+    ```bash
+    rakuram-lkmp@lkmp:~/linux-kernel/linux-mainline-linus$ grep CONFIG_NETFILTER_XT_TARGET_DSCP build/.config
+    > CONFIG_NETFILTER_XT_TARGET_DSCP=m
+    rakuram-lkmp@lkmp:~/linux-kernel/linux-mainline-linus$ scripts/config --file build/.config --disable CONFIG_NETFILTER_XT_TARGET_DSCP
+    rakuram-lkmp@lkmp:~/linux-kernel/linux-mainline-linus$ grep CONFIG_NETFILTER_XT_TARGET_DSCP build/.config
+    > # CONFIG_NETFILTER_XT_TARGET_DSCP is not set
+
+    # Then regenerate dependencies using below command
+    make O=build olddefconfig
+    ```
+---
+
