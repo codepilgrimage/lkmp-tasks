@@ -100,6 +100,29 @@ make O=build -j4 all 2>&1 | tee out.txt
   ```
 - So, here, our compressed kernel image version `6.1.25-lkp-kernel` for the x86_64 is approximately 12 MB in size. The file utility again clearly reveals that indeed it is a Linux kernel boot image for the x86 architecture.
 
+### Kernel Booting Process
+- ChatGPT Link - https://chatgpt.com/c/68811bdb-d578-800c-927a-4e6e9198383c
+
+#### 🛡️ Safe Flow for Kernel Installation
+```bash
+# 1. Install modules
+sudo make modules_install
+
+# 2. Copy kernel files
+sudo cp arch/x86/boot/bzImage /boot/vmlinuz-6.16-rc7
+sudo cp System.map /boot/System.map-6.16-rc7
+sudo cp .config /boot/config-6.16-rc7
+
+# 3. Generate initramfs
+sudo mkinitramfs -o /boot/initrd.img-6.16-rc7 6.16-rc7
+
+# 4. Update boot menu
+sudo update-grub
+
+# 5. Reboot and select 6.16-rc7 in GRUB menu
+sudo reboot
+```
+
 ### Important Files 
 - Makefile
 - MAINTAINERS
