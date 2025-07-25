@@ -1,5 +1,27 @@
 # Collection of faced errors and the working solution
 
+> ⚠️ **Warning: Common Pitfalls When Building Linux Kernel with Out-of-Tree (`O=...`) Build Directory**
+>
+> When using `make O=build_dir` to separate your build files from source:
+>
+> - **Case-Sensitive Path Issues**: Ensure that the `O=...` directory path matches exactly in case with what's referenced in source scripts or configs. On case-insensitive filesystems (e.g., some macOS or Windows mounts), this can cause cryptic errors.
+> - **Missing `.config` or inconsistent Kconfig**: Always run `make O=build_dir defconfig` or copy the `.config` into the `build_dir` before starting.
+> - **Stale files or partial builds**: If switching between in-tree and out-of-tree builds, clean both source and build dirs (`make mrproper` and remove build_dir) to avoid subtle issues.
+> - **Relative path assumptions**: Some scripts expect paths relative to the source tree. Always use absolute paths when possible for `O=...`.
+> - **Missing symlinks or headers**: Some Makefiles assume headers or generated files exist in the source dir; make sure the output directory is fully initialized.
+>
+> 🧠 _Ask me how I know_: I spent almost **2 full days** debugging a case-sensitive directory mismatch. Great learning, but not the most fun I've had!
+>
+> ✅ Always double-check your command syntax and environment when setting `O=...`:
+>
+> ```bash
+> make O=../builddir x86_64_defconfig
+> make O=../builddir -j$(nproc)
+> ```
+>
+> 💡 Tip: Add `V=1` for verbose output if errors seem unrelated to code but may be from path/config issues.
+
+
 ---
 ## 1. Error in executing the `make mrproper`
 ### Error 
