@@ -33,11 +33,11 @@ Linux kernel Fall Unpaid 2025 mentorship program
 - [Exploring the Linux kernel: The secrets of Kconfig/kbuild](https://opensource.com/article/18/10/kbuild-and-kconfig)
 - [Kbuild: the Linux Kernel Build System](https://www.linuxjournal.com/content/kbuild-linux-kernel-build-system)
 
-
 ## Misc
 - [cregit Tool - Explore the source history](https://github.com/cregit/cregit)
 - [The Linux Kernel Archives](https://www.kernel.org/)
 - [Kernel Newbies](https://kernelnewbies.org/)
+- [Naveen Naidu - Blog on Linux/LKMP](https://naveenaidu.dev/tags/linux)
 
 ## Kernel Links
 - [Linux-Mainline](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/)
