@@ -125,6 +125,22 @@ sudo update-grub
 sudo reboot
 ```
 
+### Set system to boot in console mode (non-GUI) - Helpful for capturing the kernel panics
+- Step 1: Boot the system in console mode using below commands
+  ```
+  sudo systemctl set-default multi-user.target
+  sudo reboot
+  ```
+- Step 2: Login your your credentials
+- Step 3: Restore GUI mode as default
+  ```
+  sudo systemctl set-default graphical.target
+  sudo reboot
+  ```
+- Refer to this chat: https://chatgpt.com/c/688bac3b-29e4-800c-857b-a2126f32c73f
+
+
+
 ### Important Files 
 - Makefile
 - MAINTAINERS
