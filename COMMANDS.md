@@ -61,7 +61,8 @@ $ echo "$LKP_KSRC"
 # Disable the certificate
 scripts/config --file build/.config --disable SYSTEM_TRUSTED_KEYS
 scripts/config --file build/.config --disable SYSTEM_REVOCATION_KEYS
-scripts/config --file build/.config --disable CONFIG_NETFILTER_XT_TARGET_DSCP
+scripts/config --file build/.config --disable SYSTEM_REVOCATION_LIST
+scripts/config --file build/.config --disable CONFIG_NETFILTER_XT_TARGET_DSCP # not necessary
 # Build Step
 make mrproper
 make O=build olddefconfig
