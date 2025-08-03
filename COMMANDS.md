@@ -40,6 +40,7 @@ $ echo "$LKP_KSRC"
 /home/rakuram-lkmp/linux-kernel/linux-mainline-linus
 ```
 
+---
 ### Compile the Kernel
 - Set up an environment variable to point to the location of the root of our shiny new kernel source tree
   `export LKP_KSRC=~/kernels/linux-6.1.25`
@@ -71,7 +72,9 @@ grep CONFIG_SYSTEM_REVOCATION_KEYS build/.config
 grep CONFIG_SYSTEM_TRUSTED_KEYS build/.config
 make O=build -j4 all 2>&1 | tee out.txt
 ```
+---
 
+---
 ### After Completion of Compilation
 - In the root of the kernel source tree, we will now have the following files:
   - The uncompressed kernel image file, vmlinux (used for debugging purposes)
@@ -102,7 +105,9 @@ make O=build -j4 all 2>&1 | tee out.txt
   swap_dev 0XB, Normal VGA
   ```
 - So, here, our compressed kernel image version `6.1.25-lkp-kernel` for the x86_64 is approximately 12 MB in size. The file utility again clearly reveals that indeed it is a Linux kernel boot image for the x86 architecture.
+---
 
+---
 ### Kernel Booting Process
 - ChatGPT Link - https://chatgpt.com/c/68811bdb-d578-800c-927a-4e6e9198383c
 
@@ -125,7 +130,9 @@ sudo update-grub
 # 5. Reboot and select 6.16-rc7 in GRUB menu
 sudo reboot
 ```
+---
 
+---
 ### Set system to boot in console mode (non-GUI) - Helpful for capturing the kernel panics
 - Step 1: Boot the system in console mode using below commands
   ```
@@ -139,8 +146,66 @@ sudo reboot
   sudo reboot
   ```
 - Refer to this chat: https://chatgpt.com/c/688bac3b-29e4-800c-857b-a2126f32c73f
+---
 
+---
+### Verify the kernel version after mmanually modifying it in root MakeFile
 
+Great question — after a clean rebuild, before you sudo make install, you can verify your custom kernel version (naming) using the following methods.
+
+#### ✅ 1. Check the compiled kernel version string directly
+🔍 Look into the generated include/generated/utsrelease.h
+```bash
+cat include/generated/utsrelease.h
+```
+You should see:
+
+```c
+#define UTS_RELEASE "6.16.0-rc7-rakuram-version"
+```
+This is exactly what `uname -r` will show once you boot into this kernel.
+
+#### ✅ 2. Check the built kernel image filename
+If you're building the kernel using the traditional flow (make → make install), the output kernel binary will be:
+
+```bash
+ls -lh arch/x86/boot/bzImage
+```
+You can inspect the version string inside the bzImage using strings:
+
+```bash
+strings arch/x86/boot/bzImage | grep "Linux version"
+```
+
+**Sample output:**
+`Linux version 6.16.0-rc7-rakuram-version (rakuram-lkmp@lkmp) ...`
+That confirms the compiled kernel carries the correct custom version string.
+
+#### ✅ 3. Check the .version file (optional)
+Check:
+```bash
+cat .version
+```
+This is the internal build number for the kernel image and may be appended to EXTRAVERSION (rarely used by default). Not critical, but useful for version tracking if you're doing incremental builds.
+
+#### ✅ 4. Check the kernel build metadata in scripts/
+```bash
+cat include/generated/compile.h
+You'll see below output:
+```
+```c
+#define UTS_VERSION "#1 SMP PREEMPT_DYNAMIC <build date> <username>"
+```
+This confirms the kernel was freshly rebuilt.
+
+#### ✅ Final Optional: Add Local Version via Makefile or scripts/setlocalversion
+To make the version string completely predictable, you can control this via:
+
+```makefile
+EXTRAVERSION = -rc7-rakuram-version
+LOCALVERSION = ""
+```
+---
 
 ### Important Files 
 - Makefile
