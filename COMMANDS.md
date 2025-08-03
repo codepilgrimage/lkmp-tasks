@@ -198,6 +198,34 @@ You'll see below output:
 ```
 This confirms the kernel was freshly rebuilt.
 
+#### ✅ 5. To force GRUB to default to your custom kernel
+- Set by name
+  ```bash
+  sudo vi /etc/default/grub
+  ```
+- Set the GRUB_DEFAULT like below
+  ```bash
+  GRUB_DEFAULT="Advanced options for Ubuntu>Ubuntu, with Linux 6.16.0-rc7-rakuram-version+"
+  ```
+- Execute below command after manually updating the grub
+  ```bash
+  sudo update-grub
+  ```
+- **To understand, why even after performing all the steps properly**
+  ```bash
+  make clean
+  make mrproper
+  make olddefconfig
+  # disable the REVOCATION_LIST/REVOCATION_KEYS/TRUSTED_KEYs
+  time make -j$(nproc) 2>&1 | tee <log_file_name.txt>
+
+  sudo make modules_install
+  sudo make install
+  # After this step, ensure to check the **Point. 5** to manually update the GRUB_DEFAULT and continue below.
+  sudo update-grub
+  sudo reboot
+  ```
+
 #### ✅ Final Optional: Add Local Version via Makefile or scripts/setlocalversion
 To make the version string completely predictable, you can control this via:
 
