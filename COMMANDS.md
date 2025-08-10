@@ -237,15 +237,16 @@ LOCALVERSION = ""
 
 ---
 ### Usage of decode_stacktrace.sh script for understanding the issue reported in Syzkaller
+#### Unarchive the vmlinux
+- `xz -d ../syzkaller_analysis/6/<vmlinux-sdfg55e8.xz>`
+
+#### Call decode_stacktrace.sh
 - `cat ../syzkaller_analysis/1/syzkaller_report.txt | ./scripts/decode_stacktrace.sh ../syzkaller_analysis/1/vmlinux-89be9a83 auto > decoded_2.txt`
   - Here, `cat <file_name>` - provides the path to report of Syzkaller issue
   - `|` - Pipe command. Whatever the data being read by `cat` is being feed to the `scripts/decode_stacktrace.sh` along with appropriate syzkaller issue `vmlinux` image
   - `auto` - look for complete modules not particular modules
   - ` > output.txt` - forward the data to this `output.txt` file rather than displaying in the terminal
 ---
-
-
-
 
 ### Important Files 
 - Makefile
