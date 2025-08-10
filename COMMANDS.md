@@ -237,10 +237,33 @@ LOCALVERSION = ""
 
 ---
 ### Usage of decode_stacktrace.sh script for understanding the issue reported in Syzkaller
-#### Unarchive the vmlinux
+#### Step 1: Use syzkaller site to understand about reported bugs
+- Link: [Syzkaller](https://syzkaller.appspot.com/upstream)
+- Download below artifacts:
+  - vmlinux (archived file in .xz  format)
+  - Crash Report
+  - Console Log
+  - Problamatic CommitID
+  - .config file
+  - Kernel Image (optional)
+  - Disk Image (optional)
+- Once We have above information, do the below
+  - Checkout the commit based on the **CommitID**
+  - Copy/replace the downloaded `.config` to the kernel source tree
+
+#### Step 2: Unarchive the vmlinux
 - `xz -d ../syzkaller_analysis/6/<vmlinux-sdfg55e8.xz>`
 
-#### Call decode_stacktrace.sh
+#### Step 3: Generate headers & build tree structure
+- Execute the below commands one by one
+  - ```
+    make olddefconfig
+    # make prepare (sometime we end up getting the error during this stage)
+    sudo make prepare 
+    make scripts
+    ```
+
+#### Step 4: Call decode_stacktrace.sh
 - `cat ../syzkaller_analysis/1/syzkaller_report.txt | ./scripts/decode_stacktrace.sh ../syzkaller_analysis/1/vmlinux-89be9a83 auto > decoded_2.txt`
   - Here, `cat <file_name>` - provides the path to report of Syzkaller issue
   - `|` - Pipe command. Whatever the data being read by `cat` is being feed to the `scripts/decode_stacktrace.sh` along with appropriate syzkaller issue `vmlinux` image
