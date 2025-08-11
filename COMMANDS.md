@@ -27,6 +27,8 @@
 - ```
   sudo apt-get install build-essential vim git cscope libncurses-dev libssl-dev bison flex gawk mokutil libdwarf-dev libelf-dev libdw-dev
   sudo apt-get install codespell
+  # for checkpatch.pl
+  sudo apt install python3-ply
   ```
 
 ### Export the Kernel Source Folder
