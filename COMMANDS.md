@@ -273,6 +273,21 @@ LOCALVERSION = ""
   - ` > output.txt` - forward the data to this `output.txt` file rather than displaying in the terminal
 ---
 
+---
+### Git Send Patch Mail
+```shell
+git add modules/kernel_panic/kernel_panic.c modules/kernel_panic/Makefile 
+
+git commit -s --amend or git commit -s 
+
+git format-patch -1
+
+./scripts/checkpatch.pl 0001-kernel-modules-trigger-kernel-panic-for-testing.patch 
+
+git send-email --to=skhan@linuxfoundation.org --cc=rakuram.e96@gmail.com 0001-Makefile-add-extra-version-tag-for-custom-build.patch
+```
+---
+
 ### Important Files 
 - Makefile
 - MAINTAINERS
