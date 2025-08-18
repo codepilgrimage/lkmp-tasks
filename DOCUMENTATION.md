@@ -70,3 +70,10 @@ Or just build normally and look for lines like:
 ```vbnet
 WARNING: Title underline too short.
 ```
+
+# 3. Run selftests in Linux
+Run:
+```bash
+sudo make -C tools/testing/selftests run_tests
+sudo make -C tools/testing/selftests run_tests 2>&1 | tee <output_file>
+```
