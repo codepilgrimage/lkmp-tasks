@@ -80,6 +80,13 @@
   ```
   This should now succeed without the Illegal option - error.
 
+## [OR]
+- Simply perform git reset (as below)
+  ```bash
+  git reset --hard <CommitID>
+  ```
+- This will reset the unnecessary line endings added by the windows PC.
+- Much easier method to perform as well.
 ---
 
 ---
