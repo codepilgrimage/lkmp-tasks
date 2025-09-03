@@ -29,6 +29,8 @@
   sudo apt-get install codespell
   # for checkpatch.pl
   sudo apt install python3-ply python3-git
+  # to install coccinelle
+  sudo apt install coccinelle
   ```
 
 ### Export the Kernel Source Folder
