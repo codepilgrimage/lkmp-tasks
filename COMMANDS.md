@@ -31,6 +31,12 @@
   sudo apt install python3-ply python3-git
   # to install coccinelle
   sudo apt install coccinelle
+  # install other necessary tools
+  sudo apt-get install build-essential flex bison yacc
+  sudo apt install libelf-dev systemtap-sdt-dev libslang2-dev libperl-dev libdw-dev
+  # Install stress-ng and paxtest
+  apt-get install stress-ng paxtest
+  apt-get install 
   ```
 
 ### Export the Kernel Source Folder
