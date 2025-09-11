@@ -36,7 +36,9 @@
   sudo apt install libelf-dev systemtap-sdt-dev libslang2-dev libperl-dev libdw-dev
   # Install stress-ng and paxtest
   apt-get install stress-ng paxtest
-  apt-get install 
+  apt-get install
+  # For smatch
+  sudo apt-get install gcc make sqlite3 libsqlite3-dev libdbd-sqlite3-perl libssl-dev libtry-tiny-perl
   ```
 
 ### Export the Kernel Source Folder
