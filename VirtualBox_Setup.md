@@ -12,3 +12,5 @@ Inside your guest OS (Linux) run:
 ```
 sudo usermod -aG vboxsf $USER
 ```
+
+3. Update the ubuntu-linux through **SoftwareUpdater**
